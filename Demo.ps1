@@ -16,23 +16,26 @@ Update-Help
 
 get-help -Name Get-Service
 get-help -name get-service -Full
-
-show-command Restart-Service
-
-Get-Command -Name *service*
-
-Get-Service spooler
-Get-Service -name Spooler
-Get-Service -n spooler
+get-help -name get-service -Examples
+get-help -name get-service -ShowWindow
+get-help -name get-service -online
 
 
-get-service -name spooler | select *
+Get-Command -Name *process*
+get-process 
 
-get-service -name spooler | Get-Member
+get-help -name Enter-PSHostProcess -ShowWindow
 
-Get-Member 
+get-service | Get-Member
+
+
+Get-Service -name spooler
+
+Get-Service -n spooler #don't do this its a bad habbit to get into
+
 
 get-service -name spooler | Select-Object *
+get-service -name spooler | Select-Object Name,DisplayName,Status,StartType
 
 get-service -Name spooler,bits | Stop-Service
 
@@ -42,28 +45,35 @@ stop-service -Name Spooler
 get-service | Stop-Service -WhatIf
 Get-Process | stop-process 
 
-get-service bits,spooler | Start-Service
+get-service -Name bits,spooler | Start-Service
 
 get-command -ParameterName whatif
 
+
 $service = get-service -name Spooler
-[string]$mystring
+$service | Get-member
+$service | Select-Object *
+
+
 
 $dime = 10
 $dime = "ten"
 $dime = "10"
+[int]$dime = "10"
+[string]$dime = 10
 
 
-5 + 5
-5 + "five" 
+5 + 5 # Int + Int
+5 + "five" # Int + String
 
-"five" + 5
+"five" + 5 # String + string
 "5" + 5
+
+
 $dime + 1
 
 1 + $dime
 "5" + 5
-[string]$dime = 10
 
 ("10" + 1).GetType()
 
@@ -73,6 +83,8 @@ $date = 1152025
 
 Get-ChildItem | Sort-Object -Property name | Format-Table
 Get-ChildItem | Sort-Object -Property name | Format-List
+
+
 
 get-process | Select-Object name,PagedMemorySize | Sort-Object Name
 
