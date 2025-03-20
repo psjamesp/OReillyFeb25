@@ -25,10 +25,11 @@ $var | Get-Member
 -le less than equal to
 -like
 -match
+
 -and
 -or
 
-go here for more info https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.4
+#go here for more info https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.4
 
 
 
